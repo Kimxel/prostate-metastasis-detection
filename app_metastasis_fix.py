@@ -20,10 +20,7 @@ def load_model():
             model.head_dist = nn.Linear(model.head_dist.in_features, 6)
 
         # Load the state dictionary (model weights)
-        model.load_state_dict(torch.load(
-            "E:\\Kimi\\Penelitian\\Transformer_Skripsi\\Deit\\Deit_Biasa_Tuning\\best_model-deit1.pth",
-            map_location=torch.device('cpu')
-        ))
+        model.load_state_dict(torch.load("models/best_model-deit1.pth", map_location=torch.device('cpu')))
         model.eval()  # Set the model to evaluation mode
         return model
     except Exception as e:
